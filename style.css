@@ -549,3 +549,54 @@ footer h3 {
 .whatsapp-btn i {
   font-size: 24px;
 }
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+/* Branch Section */
+
+.branches {
+  background: #eff6ff;
+}
+
+.branch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.branch-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-decoration: none;
+  border: 1px solid #dbeafe;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.branch-card h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.branch-card p {
+  color: #64748b;
+}
+
+/* Mobile */
+
+@media(max-width: 900px) {
+
+  .branch-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
