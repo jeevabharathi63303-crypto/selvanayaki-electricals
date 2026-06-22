@@ -53,6 +53,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  text-decoration: none;
 }
 
 .logo {
@@ -299,67 +300,6 @@ footer h3 {
 .gallery-item {
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid #dbeafe;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  transition: 0.4s;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.05);
-}
-
-/* Responsive */
-
-@media(max-width: 900px) {
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-/* Responsive */
-
-@media(max-width: 900px) {
-
-  .hero-grid,
-  .about-grid,
-  .contact-grid,
-  .product-grid,
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content h2 {
-    font-size: 42px;
-  }
-
-  nav {
-    display: none;
-  }
-
-}
-/* Gallery Page */
-
-.gallery-page {
-  background: #eff6ff;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.gallery-item {
-  overflow: hidden;
-  border-radius: 20px;
   background: white;
   border: 1px solid #dbeafe;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -376,15 +316,12 @@ footer h3 {
   transform: scale(1.05);
 }
 
-/* Mobile */
+/* Gallery Page */
 
-@media(max-width: 900px) {
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
+.gallery-page {
+  background: #eff6ff;
 }
+
 /* Product Images */
 
 .product-card {
@@ -548,12 +485,6 @@ footer h3 {
 
 .whatsapp-btn i {
   font-size: 24px;
-}
-.logo-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  text-decoration: none;
 }
 /* Branch Section */
 
