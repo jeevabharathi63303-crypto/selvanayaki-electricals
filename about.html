@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Selvanayaki Electricals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* =========================================
+           GLOBAL STYLES & RESET
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================================
+           NAVIGATION BAR
+           ========================================= */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(219, 234, 254, 0.5);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 60px;
+        }
+
+        .logo-section h1 {
+            color: #2563eb;
+            font-size: 24px;
+        }
+
+        .logo-section p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #2563eb;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            min-width: 240px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            z-index: 2000;
+            padding: 10px 0;
+            border: 1px solid rgba(219, 234, 254, 0.8);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #1e293b;
+            padding: 12px 24px;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #eff6ff;
+            color: #2563eb;
+            padding-left: 30px;
+        }
+
+        /* =========================================
+           PREMIUM ABOUT PAGE STYLES
+           ========================================= */
+        .page-header-premium {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image_0a9e65.jpg') center/cover;
+            padding: 120px 20px 80px 20px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-header-premium h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .page-header-premium p {
+            font-size: 1.2rem;
+            color: #dbeafe;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-premium-section {
+            padding: 100px 0;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .about-premium-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .image-collage {
+            position: relative;
+            padding-right: 40px;
+            padding-bottom: 40px;
+        }
+
+        .img-main {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+            object-fit: cover;
+            min-height: 450px;
+        }
+
+        .img-accent {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 55%;
+            border-radius: 20px;
+            border: 12px solid #ffffff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+        }
+
+        .text-content-premium h4 {
+            color: #2563eb;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: #eff6ff;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        .text-content-premium h2 {
+            font-size: 2.8rem;
+            color: #1e293b;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .text-content-premium h2 span {
+            color: #2563eb;
+        }
+
+        .text-content-premium p {
+            color: #64748b;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .premium-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .premium-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .premium-list i {
+            color: #25d366;
+            background: #dcfce7;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        /* --- Vision & Mission --- */
+        .vision-mission-premium {
+            background-color: #f8fafc;
+            padding: 100px 0;
+        }
+
+        .vm-premium-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .vm-card-modern {
+            padding: 60px 50px;
+            border-radius: 30px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vm-card-modern:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-dark {
+            background: #0f172a;
+            color: #f8fafc;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+        }
+
+        .card-dark .vm-icon-modern {
+            background: rgba(255, 255, 255, 0.08);
+            color: #60a5fa;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-dark h3 {
+            color: #ffffff;
+        }
+
+        .card-dark p {
+            color: #94a3b8;
+        }
+
+        .card-light {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-light .vm-icon-modern {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .card-light h3 {
+            color: #0f172a;
+        }
+
+        .card-light p {
+            color: #475569;
+        }
+
+        .vm-icon-modern {
+            width: 80px;
+            height: 80px;
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .vm-card-modern h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .vm-card-modern p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* --- Achievements --- */
+        .achievements-section {
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        .achievements-wrapper {
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .achievements-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .achievement-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .icon-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 1px solid #1e5fc2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            background-color: transparent;
+        }
+
+        .icon-circle::before {
+            content: '';
+            width: 65px;
+            height: 65px;
+            background-color: #1e5fc2;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .icon-circle i {
+            color: white;
+            font-size: 26px;
+            z-index: 2;
+        }
+
+        .counter-box {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .achievement-item p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* =========================================
+           DARK FOOTER
+           ========================================= */
+        .dark-footer {
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+            padding: 70px 0 30px 0;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col {
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: #ffffff;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .footer-logo {
+            width: 60px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .footer-logo-section h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .links-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-col p {
+            margin-bottom: 8px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-4px);
+            color: #ffffff;
+        }
+
+        .social-icons .facebook {
+            background-color: #1877f2;
+        }
+
+        .social-icons .instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-icons .whatsapp {
+            background-color: #25d366;
+        }
+
+        .footer-divider {
+            border: none;
+            border-top: 1px solid #333333;
+            margin: 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 25px;
+            text-align: left;
+        }
+
+        .footer-bottom p {
+            color: #737373;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-legal a {
+            color: #737373;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: #ffffff;
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVE RULES (Max 900px)
+           ========================================= */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: #2563eb;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-container {
+                flex-direction: row;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding-left: 15px;
+                min-width: 100%;
+            }
+
+            .about-premium-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .image-collage {
+                padding: 0;
+            }
+
+            .img-accent {
+                display: none;
+            }
+
+            .text-content-premium h2 {
+                font-size: 2.2rem;
+            }
+
+            .premium-list {
+                grid-template-columns: 1fr;
+            }
+
+            .vm-premium-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .vm-card-modern {
+                padding: 40px 30px;
+                border-radius: 20px;
+            }
+
+            .vm-card-modern h3 {
+                font-size: 1.8rem;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: left;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: left;
+                align-items: flex-start;
+            }
+
+            .footer-logo-section,
+            .social-icons {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-section">
+                <img src="logo.png" alt="Logo" class="logo">
+                <div>
+                    <h1>Selvanayaki Electricals</h1>
+                    <p>Authorized Dealer & Service Center</p>
+                </div>
+            </a>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html" style="color: #2563eb;">About</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Products <i class="fa-solid fa-angle-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="ksb-pumps.html">KSB Pumps</a>
+                        <a href="kirloskar-pumps.html">Kirloskar Pumps</a>
+                        <a href="tufropes.html">Tufropes</a>
+                        <a href="bharat-bijlee.html">Bharat Bijlee</a>
+                    </div>
+                </div>
+
+                <a href="gallery.html">Gallery</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header-premium">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>Driving industrial excellence through genuine products, technical expertise, and unparalleled service.
+            </p>
+        </div>
+    </section>
+
+    <section class="about-premium-section">
+        <div class="container about-premium-grid">
+
+            <div class="image-collage">
+                <img src="image_0a9e65.jpg" alt="Industrial Pumps" class="img-main">
+                <img src="pump-banner.png" alt="Service Center" class="img-accent">
+            </div>
+
+            <div class="text-content-premium">
+                <h4>Who We Are</h4>
+                <h2>Decades of Trust & <span>Excellence</span></h2>
+
+                <p>Located in the heart of Siddhapudur, Coimbatore, <strong>Selvanayaki Electricals</strong> has
+                    established itself as the region's premier destination for high-quality industrial and agricultural
+                    equipment.</p>
+
+                <p>We don't just sell products; we engineer solutions. As an authorized dealer and certified service
+                    center for industry giants like KSB, Kirloskar, and Bharat Bijlee, we ensure that your operations
+                    run seamlessly with zero downtime.</p>
+
+                <ul class="premium-list">
+                    <li><i class="fa-solid fa-check"></i> 100% Genuine Spares</li>
+                    <li><i class="fa-solid fa-check"></i> Authorized Service Center</li>
+                    <li><i class="fa-solid fa-check"></i> On-Site Troubleshooting</li>
+                    <li><i class="fa-solid fa-check"></i> Expert Technicians</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="vision-mission-premium">
+        <div class="container">
+            <div class="vm-premium-grid">
+
+                <div class="vm-card-modern card-dark">
+                    <div class="vm-icon-modern">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted and preferred partner for industrial and electrical solutions in Tamil
+                        Nadu, recognized for our unwavering commitment to quality, genuine products, and customer-first
+                        service.</p>
+                </div>
+
+                <div class="vm-card-modern card-light">
+                    <div class="vm-icon-modern">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To consistently provide our customers with top-tier industrial equipment and reliable after-sales
+                        support. We strive to solve complex mechanical challenges with technical expertise and fast
+                        turnaround times.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements-section" style="padding-top: 0;">
+        <div class="achievements-wrapper">
+            <div class="container achievements-grid">
+                <div class="achievement-item">
+                    <div class="icon-circle"><i class="fa-solid fa-thumbs-up"></i></div>
+                    <div class="counter-box">
+                        <h3 class="counter" data-target="24">0</h3><span>+</span>
+                    </div>
+                    <p>Years of experience</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="icon-circle"><i class="fa-solid fa-right-to-bracket"></i></div>
+                    <div class="counter-box">
+                        <h3 class="counter" data-target="100">0</h3><span>K</span>
+                    </div>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="icon-circle"><i class="fa-regular fa-star"></i></div>
+                    <div class="counter-box">
+                        <h3 class="counter" data-target="200">0</h3><span>+</span>
+                    </div>
+                    <p>No of Products</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="icon-circle"><i class="fa-regular fa-heart"></i></div>
+                    <div class="counter-box">
+                        <h3 class="counter" data-target="100">0</h3><span>%</span>
+                    </div>
+                    <p>Customer Service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="dark-footer">
+        <div class="container footer-top">
+
+            <div class="footer-col brand-col">
+                <a href="index.html" class="footer-logo-section">
+                    <img src="logo.png" alt="Logo" class="footer-logo">
+                    <div>
+                        <h2>Selvanayaki<br>Electricals</h2>
+                    </div>
+                </a>
+                <p>Elevating global standards with professional care and technical precision. Your trusted advisor for
+                    industrial pumps and motors.</p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h3>Contact</h3>
+                <p>+91 98422 63303</p>
+                <p>selvanayakiksb@gmail.com</p>
+                <p>Siddhapudur, Coimbatore 641044</p>
+            </div>
+
+            <div class="footer-col social-col">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/61577812341971" target="_blank" class="facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/selvanayakigroups/" target="_blank" class="instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/919842263303" target="_blank" class="whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <hr class="footer-divider">
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 Selvanayaki Electricals. All Rights Reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Number Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            const speed = 100;
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const increment = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            }
+
+            const observerOptions = { root: null, threshold: 0.5 };
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const achievementsSection = document.querySelector('.achievements-wrapper');
+            if (achievementsSection) {
+                counterObserver.observe(achievementsSection);
+            }
+
+            // Mobile Menu Logic
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (mobileMenu && navMenu) {
+                mobileMenu.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    const icon = mobileMenu.querySelector('i');
+                    if (icon) {
+                        if (navMenu.classList.contains('active')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-xmark');
+                        } else {
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
